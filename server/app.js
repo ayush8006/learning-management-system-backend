@@ -29,15 +29,15 @@ app.use('/ping',function(req,res){
 });
 
 //routes of 3 module
-
 app.use('/api/v1/user',userRoutes)
 app.use('/api/v1/courses',courseRoutes)
 app.use('/api/v1/payments',paymentRoutes)
+
 
 app.all('*',(req,res)=>{
     res.status(404).send('OOPS!! 404 PAGE not found');
 });
 
-app.use(errorMiddleware);
 
+app.use(errorMiddleware);
 export default app;
